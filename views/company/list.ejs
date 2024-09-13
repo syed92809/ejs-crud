@@ -1,0 +1,10 @@
+<h1>Companies List</h1>
+<a href="/company/create">Create New Company</a>
+
+<ul>
+    <% companies.forEach(company => { %>
+        <li><%= company.name %> - <%= company.email %> <%= company.phone %> <a href="/company/edit">Edit</a> <a href="/company">Delete</a></li> 
+        <% }) %>
+    </ul>
+    
+<h3><a href="/users">View Users</a></h3>

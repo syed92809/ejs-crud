@@ -15,7 +15,7 @@ exports.createUser = async (req,res) => {
     await prisma.user.create({
         data: {name,email,companyId: parseInt(companyId)}
     });
-    res.render('user/')
+    res.redirect('/users')
 }
 
 exports.editUserForm = async (req, res) => {

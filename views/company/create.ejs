@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Company</title>
+</head>
+<body>
+    <h1>Create New Company</h1>
+
+    <form action="/company/create" method="post">
+
+        <div>
+            <label for="name">Company Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div>
+            <label for="name">Company Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="name">Company Phone</label>
+            <input type="text" name="phone" id="phone" required>
+        </div>
+
+        <div>
+            <button type="submit">Create</button>
+        </div>
+
+    </form>
+    <a href="/company">Go Back</a>
+</body>
+</html>

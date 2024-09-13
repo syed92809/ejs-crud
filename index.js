@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended:true}));
 
 // Use the routes
 app.use('/users',userRoute);
-app.use('/companies', companyRoute);
+app.use('/company', companyRoute);
 
 
 const PORT = process.env.PORT || 3000;

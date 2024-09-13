@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <h1>Create New user</h1>
+
+    <form action="/users/create" method="post">
+
+        <div>
+            <label for="name">Enter Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div>
+            <label for="name">Enter Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="name">Company Id</label>
+            <input type="number" name="companyId" id="companyId" required>
+        </div>
+
+        <div>
+            <button type="submit">Create</button>
+        </div>
+
+    </form>
+    <a href="/users">Go Back</a>
+</body>
+</html>

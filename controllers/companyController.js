@@ -10,9 +10,9 @@ exports.createCompanyForm = (req, res) => {
 };
 
 exports.createCompany = async (req, res) => {
-  const { name } = req.body;
-  await prisma.company.create({ data: { name } });
-  res.redirect('/companies');
+  const { name,email,phone } = req.body;
+  await prisma.company.create({ data: { name,email,phone } });
+  res.redirect('/company');
 };
 
 exports.editCompanyForm = async (req, res) => {
@@ -26,10 +26,10 @@ exports.updateCompany = async (req, res) => {
     where: { id: parseInt(req.params.id) },
     data: { name }
   });
-  res.redirect('/companies');
+  res.redirect('/company');
 };
 
 exports.deleteCompany = async (req, res) => {
   await prisma.company.delete({ where: { id: parseInt(req.params.id) } });
-  res.redirect('/companies');
+  res.redirect('/company');
 };
