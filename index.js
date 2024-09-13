@@ -1,23 +1,18 @@
 const express = require('express');
 const axios = require('axios'); 
-
 const app = express();
+const prisma = require('@prisma/client').PrismaClient;
+const userRoute = require('./routes/userRoutes');
+const companyRoute = require('./routes/companyRoutes');
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended:true}));
 
-app.get('/', async (req, res) => {
-  try {
-    // Fetch data from the API 
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    const posts = response.data; 
+// Use the routes
+app.use('/users',userRoute);
+app.use('/companies', companyRoute);
 
-    // Render the index view of ejs
-    res.render('index', { posts });
-  } catch (error) {
-    res.status(500).send('Error fetching data');
-  }
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
